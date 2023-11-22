@@ -1306,7 +1306,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1
+  m_Text: 0
 --- !u!222 &957946120
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1985,6 +1985,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedSlider: {fileID: 1136985057}
   timeScaleText: {fileID: 957946119}
+  sliderinteractable: 0
 --- !u!1 &1163268668
 GameObject:
   m_ObjectHideFlags: 0
@@ -3729,6 +3730,7 @@ GameObject:
   - component: {fileID: 1998509106}
   - component: {fileID: 1998509109}
   - component: {fileID: 1998509108}
+  - component: {fileID: 1998509110}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -3781,6 +3783,25 @@ MonoBehaviour:
   counter: {fileID: 1541970010}
   Spawn: {fileID: 427782242}
   customersParent: {fileID: 1330383192}
+--- !u!114 &1998509110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1998509105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbd7cfd5c4878a04e9ec00eac643a09a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  modelAToggle: {fileID: 965468133}
+  modelBToggle: {fileID: 1993407243}
+  startButton: {fileID: 1528707654}
+  pauseResumeButton: {fileID: 1884867658}
+  timeScaleSlider: {fileID: 1136985057}
+  pauseResumeText: {fileID: 1180131918}
+  simulationRunning: 0
 --- !u!1 &2041587731
 GameObject:
   m_ObjectHideFlags: 0
