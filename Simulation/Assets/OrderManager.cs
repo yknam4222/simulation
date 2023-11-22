@@ -11,7 +11,7 @@ public class OrderManager : MonoBehaviour
 
     private int orderCount = 0;
     private int TotalOrderCount = 0;
-    public float waitingTime = 0f;
+    [HideInInspector] public float waitingTime = 0f;
     private float TotalTime = 0f;
 
     void Start()

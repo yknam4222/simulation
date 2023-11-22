@@ -16,7 +16,7 @@ public class Customer : MonoBehaviour
 
     void Start()
     {
-        orderManager = GameObject.Find("OrderManager").GetComponent<OrderManager>();
+        orderManager = GameObject.Find("GameManager").GetComponent<OrderManager>();
     }
 
     void Update()
