@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Customer : MonoBehaviour
 {
@@ -10,7 +11,9 @@ public class Customer : MonoBehaviour
 
     private bool isMoving = true; // 초기에 이동 상태로 설정
     private OrderManager orderManager;
-    private bool orderCompleted = false;
+    private bool orderCompleted = false; //주문완료 플래그
+    private bool waittingTrigger = false;
+
     void Start()
     {
         orderManager = GameObject.Find("OrderManager").GetComponent<OrderManager>();
@@ -22,7 +25,14 @@ public class Customer : MonoBehaviour
         {
             MoveToCounter();
         }
+        if(!isMoving && !waittingTrigger)
+        {
+            orderManager.waitingTime += Time.deltaTime;
+            UpdateWaitingTime();
+        }
+        
         CheckSpacing();
+
     }
 
     void MoveToCounter()
@@ -52,6 +62,7 @@ public class Customer : MonoBehaviour
     {
         yield return new WaitForSeconds(7f); // 3초 대기
         Destroy(gameObject); // 프리팹 제거
+        waittingTrigger = true; //주문 받고 나가면 waitingtime 종료
     }
     void CheckSpacing()
     {
@@ -70,5 +81,10 @@ public class Customer : MonoBehaviour
         {
             isMoving = true;
         }
+    }
+
+    void UpdateWaitingTime()
+    {
+        orderManager.waitingTimeText.text = orderManager.waitingTime.ToString("F1");
     }
 }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 79976915}
   - component: {fileID: 79976914}
   m_Layer: 5
-  m_Name: GroupWT
+  m_Name: Bounce
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -940,7 +940,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e3e4de4b2381f640b6c1406d9e9eacd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orderText: {fileID: 870807723}
+  waitingTimeText: {fileID: 0}
+  waitingTime: 0
 --- !u!1 &958260167
 GameObject:
   m_ObjectHideFlags: 0
@@ -2056,7 +2057,7 @@ GameObject:
   - component: {fileID: 1881109781}
   - component: {fileID: 1881109780}
   m_Layer: 5
-  m_Name: UI_Time (1)
+  m_Name: UI_Bounce
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2216,7 +2217,7 @@ GameObject:
   - component: {fileID: 2105958851}
   - component: {fileID: 2105958850}
   m_Layer: 5
-  m_Name: GroupWT
+  m_Name: TotalTime
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

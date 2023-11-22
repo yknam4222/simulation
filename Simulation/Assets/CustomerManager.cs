@@ -10,6 +10,7 @@ public class CustomerManager : MonoBehaviour
     private int customerCount = 0; // 고객 번호 카운트 변수
     private bool isSimulationRunning = true;
 
+    private float custimerArrival = 5f; //손님 도착 시간
     void Start()
     {
         StartCoroutine(SimulationLoop());
@@ -22,7 +23,7 @@ public class CustomerManager : MonoBehaviour
             // 주문 생성 및 손님 생성
             SpawnCustomer();
 
-            yield return new WaitForSeconds(5f); // 주문 간격: 1분
+            yield return new WaitForSeconds(custimerArrival); // 주문 간격: 1분
         }
     }
 

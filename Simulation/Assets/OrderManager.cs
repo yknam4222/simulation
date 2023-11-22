@@ -4,23 +4,43 @@ using UnityEngine.UI;
 
 public class OrderManager : MonoBehaviour
 {
-    public Text orderText; // UI Text 객체를 저장할 변수
+    private Text orderText; // UI Text 객체를 저장할 변수
+    private Text TotalOrderText; // TotalOrderText
+    [HideInInspector] public Text waitingTimeText;
+    private Text simulationTimeText; // 시뮬레이션 시간
 
     private int orderCount = 0;
+    private int TotalOrderCount = 0;
+    public float waitingTime = 0f;
+    private float TotalTime = 0f;
 
     void Start()
     {
         // Canvas에서 Text 객체 찾기
         orderText = GameObject.Find("OrderText").GetComponent<Text>();
-
+        TotalOrderText = GameObject.Find("TotalOrderText").GetComponent<Text>();
+        waitingTimeText = GameObject.Find("SingleWT").GetComponent<Text>();
+        simulationTimeText = GameObject.Find("TotalTime").GetComponent<Text>();
         // 시작할 때 UI 초기화
         UpdateOrderCount();
+    }
+
+    private void Update()
+    {
+        TotalTime += Time.deltaTime;
+        UpdateTotalTime();
+    }
+
+    void UpdateTotalTime()
+    {
+        simulationTimeText.text = TotalTime.ToString("F1");
     }
 
     void UpdateOrderCount()
     {
         // UI Text 업데이트
         orderText.text = orderCount.ToString();
+        TotalOrderText.text = TotalOrderCount.ToString();
     }
 
     // 프리팹 도착 시 호출되는 메서드
@@ -46,6 +66,7 @@ public class OrderManager : MonoBehaviour
     void IncreaseOrderCount()
     {
         orderCount++;
+        TotalOrderCount++;
         UpdateOrderCount();
     }
 
